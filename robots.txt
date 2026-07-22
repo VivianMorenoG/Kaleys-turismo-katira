@@ -1,0 +1,9 @@
+# Archivo robots.txt para Kaley's Turismo en Katira
+User-agent: *
+
+# Bloquear carpetas internas
+Disallow: /admin/
+Disallow: /imagenes/
+
+# Ubicación del mapa del sitio
+Sitemap: https://kaleys-turismo-katira.netlify.app/
