@@ -1,5 +1,11 @@
-// Scroll suave en los enlaces del menú
+//Debe ser la LÍNEA 1 de tu archivo
+require('dotenv').config(); 
 
+// Variables obtenidas desde .env
+const puerto = process.env.PORT || 3000;
+const apiKey = process.env.API_KEY;
+
+// Scroll suave en los enlaces del menú
 document.querySelectorAll('nav a').forEach(link => {
 
     link.addEventListener('click', function(e){
