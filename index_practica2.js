@@ -1,54 +1,58 @@
-//Debe ser la LÍNEA 1 de tu archivo
-require('dotenv').config(); 
+require('dotenv').config();
 
-// Variables obtenidas desde .env
 const puerto = process.env.PORT || 3000;
 const apiKey = process.env.API_KEY;
 
-// Scroll suave en los enlaces del menú
-document.querySelectorAll('nav a').forEach(link => {
+console.log(`Aplicación iniciada correctamente en el puerto ${puerto}`);
+console.log('Variables de entorno cargadas correctamente');
 
-    link.addEventListener('click', function(e){
+if (typeof document !== 'undefined') {
 
-        e.preventDefault();
+    //TODO código del navegador
 
-        const destino = document.querySelector(
-            this.getAttribute('href'));
-        if (destino){ // solo ejecutar si existe la secion
-        destino.scrollIntoView({
-            behavior: 'smooth',
-            block:'start'
+    document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            const destino = document.querySelector(
+                this.getAttribute('href')
+            );
+
+            if (destino) {
+                destino.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
         });
+    });
+//BOTON ARRIBA
+    const btnTop = document.createElement('button');
+    btnTop.id = 'btnTop';
+    btnTop.innerHTML = '↑';
+    btnTop.title = 'Volver al inicio';
+
+    document.body.appendChild(btnTop);
+
+    window.addEventListener('scroll', () => {
+        btnTop.style.display = window.scrollY > 300
+            ? 'block'
+            : 'none';
+    });
+
+    btnTop.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    const year = new Date().getFullYear();
+    const footer = document.querySelector('footer');
+
+    if (footer) {
+        footer.innerHTML += `
+            <p>© ${year} Kaley's Turismo en Katira</p>
+        `;
     }
-    });
-});
-
-// Botón volver arriba
-
-const btnTop = document.createElement('button');
-btnTop.id = 'btnTop';
-btnTop.innerHTML = '↑';
-btnTop.title= 'Volver al inicio';//Texto para accesibilidad
-document.body.appendChild(btnTop);
-
-window.addEventListener('scroll', () => {
-    btnTop.style.display = window.scrollY > 300 ?
-     'block' : 'none';
-});
-
-btnTop.addEventListener('click', () => {
-
-    window.scrollTo({
-        top:0,
-        behavior:'smooth'
-    });
-
-});
-
-// Año automático en footer
-
-const year = new Date().getFullYear();
-
-const footer = document.querySelector('footer');
-
-footer.innerHTML += `<p>© ${year} Kaley's Turismo en Katira</p>`;
+}
