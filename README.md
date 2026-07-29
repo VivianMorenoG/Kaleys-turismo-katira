@@ -18,17 +18,18 @@ El sitio cuenta con diferentes secciones que permiten al usuario explorar el des
 - Brindar información sobre actividades recreativas, senderismo, tours y experiencias de turismo rural y ecológico.
 - Dar a conocer opciones de hospedaje, como cabañas y hoteles cercanos, para facilitar la planificación del viaje.
 - Ofrecer un sitio web optimizado para dispositivos móviles, con buenas prácticas de accesibilidad, seguridad y posicionamiento SEO.
+
 ## Features
 
-• Página de inicio con información de Río Celeste.
-• Información sobre el Parque Nacional Volcán Tenorio.
-• Actividades turísticas.
-• Hospedajes recomendados.
-• Diseño adaptable (Responsive).
-• Optimización SEO.
-• Integración con Google Analytics.
-• Botón "Volver arriba".
-• Footer dinámico con año automático.
+- Página de inicio con información de Río Celeste.
+- Información sobre el Parque Nacional Volcán Tenorio.
+- Actividades turísticas.
+- Hospedajes recomendados.
+- Diseño adaptable (Responsive).
+- Optimización SEO.
+- Integración con Google Analytics.
+- Botón "Volver arriba".
+-Footer dinámico con año automático.
 
 ## Tecnología
 
