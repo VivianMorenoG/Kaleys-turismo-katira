@@ -68,6 +68,7 @@ Una vez abierto el sitio web, el usuario podrá:
 
 
 ## Estructura de carpetas
+```text
 PRUEBASK6/
 ├── css/
 │   └── index_practica2.css
