@@ -57,7 +57,7 @@ nav a:hover {
     text-align: center;
     padding: 90px 20px;
     background: linear-gradient(rgba(14, 81, 89, 0.65), rgba(14, 81, 89, 0.65)),
-                url("./imagenes/panorama\ rio\ celeste.webp");
+                url("/imagenes/panorama_rio_celeste.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -111,6 +111,32 @@ article h3 {
     color: #0E5159;
     margin-bottom: 12px;
     font-size: 1.3rem;
+}
+
+/* --------------------------
+   CONTACTO
+--------------------------- */
+#contacto {
+    background: #ffffff;
+    border-radius: 20px;
+    margin-top: 50px;
+    text-align: center;
+    box-shadow: 0 3px 12px rgba(0,0,0,.08);
+}
+
+#contacto h2 {
+    border: none;
+    color: #0E5159;
+    margin-bottom: 20px;
+}
+
+.contacto-info {
+    margin-top: 20px;
+}
+
+.contacto-info p {
+    margin: 12px 0;
+    font-size: 1.05rem;
 }
 
 /* --------------------------

@@ -3,6 +3,7 @@
   <head>
     <meta name="google-site-verification" content="K0v9Xag3fZp8kimZ7auV3P6VWrW5DMkYOMi-MLnb6PM" />
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GCSRQPF11K"
     ></script>
@@ -24,14 +25,14 @@
       name="description"
       content="Descubre Río Celeste, el Parque Nacional Volcán Tenorio y los mejores atractivos de turismo rural y ecológico en Katira, Costa Rica."
     />
-    <link rel="canonical" href="https://kaleys-turismo-katira.netlify.app/" />
+    <link rel="canonical" href="https://kaleys-turismo.netlify.app/" />
     <meta name="robots" content="index, follow" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta
       property="og:url"
-      content="https://kaleys-turismo-katira.netlify.app/"
+      content="https://kaleys-turismo.netlify.app/"
     />
     <meta
       property="og:title"
@@ -69,9 +70,9 @@
       content="seccion-4-1-escuela-maria-leal-2026"
     />
 
-    <link rel="icon" href="./imagenes/logo.webp" type="image/webp" />
+    <link rel="icon" href="./imagenes/favicon.webp" type="image/webp" />
     <!-- CSS -->
-    <link rel="stylesheet" href="./css/index_practica2.css" />
+    <link rel="stylesheet" href="./css/style.css" />
 
     <!-- Datos estructurados JSON-LD para SEO -->
     <script type="application/ld+json">
@@ -79,9 +80,9 @@
         "@context": "https://schema.org",
         "@type": "TouristInformationCenter",
         "name": "Kaley's Turismo en Katira",
-        "image": "https://kaleys-turismo-katira.netlify.app/imagenes/logo.webp",
-        "@id": "https://kaleys-turismo-katira.netlify.app/#business",
-        "url": "https://kaleys-turismo-katira.netlify.app/",
+        "image": "https://kaleys-turismo.netlify.app/imagenes/logo.webp",
+        "@id": "https://kaleys-turismo.netlify.app/#business",
+        "url": "https://kaleys-turismo.netlify.app/",
         "telephone": "+506 6215-8052",
         "priceRange": "₡ 5 000 -₡35 000",
         "address": {
@@ -121,10 +122,9 @@
   <body>
     <header>
       <img
-        src="./imagenes/logo.webp"
+        src="./imagenes/logotipo.webp"
         alt="Logo de Kaley's Turismo en Katira"
         width="120"
-        height="120"
       />
       <nav>
         <ul>
@@ -140,12 +140,7 @@
       <!-- Keyword Principal -->
       <section id="inicio">
         <h1>Río Celeste: El destino natural más impresionante de Costa Rica</h1>
-        <img
-          src="./imagenes/panorama_rio_celeste.webp"
-          alt="Vista panorámica de Río Celeste en Costa Rica"
-          width="1200"
-          height="600"
-        />
+
         <p>
           Río Celeste es uno de los principales atractivos turísticos de Costa
           Rica, reconocido por sus aguas color turquesa y su cercanía con el
@@ -317,7 +312,7 @@
         <div class="grid-cards">
           <!-- CARD 4 -->
           <article>
-            <h4>Hotel Río Celeste Hideaway</h4>
+            <h3>Hotel Río Celeste Hideaway</h3>
             <img src="./imagenes/hotel_Hideaway.webp" alt="Fachada iluminada del hotel Hideaway en Río Celeste rodeada de vegetación tropical al atardecer." />
             <p>
               Aquí, el confort elevado se encuentra con una auténtica
@@ -331,7 +326,7 @@
 
           <!-- CARD 5 -->
           <article>
-            <h4>Tenorio Lodge</h4>
+            <h3>Tenorio Lodge</h3>
             <img src="./imagenes/tenorio_lodge_hotel.webp" alt="Cabañas rústicas del Hotel Lodge rodeadas de vegetación tropical y con vista a la montaña." />
             <p>
               Los cuartos son espaciosos, elegantes y ingeniosamente
@@ -344,9 +339,20 @@
           </article>
         </div>
       </section>
-
+      <section id="contacto">
+        <h2>Contáctanos</h2>
+         <p>Si deseas obtener más información sobre hospedajes, actividades o lugares
+          turísticos en Katira y Río Celeste, puedes comunicarte con nosotros.</p>
+            <div class="contacto-info">
+            <p><strong>📍 Dirección:</strong> Katira, Guatuso, Alajuela, Costa Rica.</p>
+            <p><strong>📞 Teléfono:</strong> +506 6215-8052</p>
+            <p><strong>📧 Correo:</strong> info@kaleysturismo.com</p>
+            <p><strong>Horario:</strong> Lunes a Domingo de 8:00 a.m. a 5:00 p.m.</p>
+          </div>
+          </section>
+  
     </main>
-    <footer id="contacto">
+    <footer>
       <p>Kaley's Turismo en Katira</p>
       <p>Katira, Alajuela, Costa Rica</p>
       <p>
@@ -355,6 +361,6 @@
       </p>
       <p>&copy; 2026 Todos los derechos reservados.</p>
     </footer>
-    <script src="./js/index_practica2.js"></script>
+    <script src="./js/script.js"></script>
   </body>
 </html>
