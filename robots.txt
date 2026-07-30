@@ -6,4 +6,4 @@ Disallow: /admin/
 Disallow: /imagenes/
 
 # Ubicación del mapa del sitio
-Sitemap: https://kaleys-turismo.netlify.app/
+Sitemap: https://kaleys-turismo-katira.infinityfreeapp.com/sitemap.xml
