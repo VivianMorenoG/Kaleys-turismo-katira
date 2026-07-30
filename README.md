@@ -39,7 +39,7 @@ El sitio cuenta con diferentes secciones que permiten al usuario explorar el des
 - Visual Studio Code
 - Git
 - GitHub
-- Netlify
+- InfinityFree
 - Google Search Console
 - Google Analytics
 
@@ -131,7 +131,7 @@ Vivian Moreno G.
  https://github.com/VivianMorenoG
 
 **Sitio Web:**
- https://kaleys-turismo.netlify.app/
+ https://kaleys-turismo-katira.infinityfreeapp.com/
 
 **Ubicación:**
  Katira, Guatuso, Alajuela, Costa Rica.
