@@ -1,10 +1,3 @@
-require("dotenv").config();
-
-const puerto = process.env.PORT || 3000;
-const apiKey = process.env.API_KEY;
-
-console.log(`Aplicación iniciada correctamente en el puerto ${puerto}`);
-console.log("Variables de entorno cargadas correctamente");
 
 if (typeof document !== "undefined") {
   //TODO código del navegador
