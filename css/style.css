@@ -241,3 +241,141 @@ footer {
     margin-top: 8px;
     color: #4a4a4a;
 }
+
+/* ==========================================
+   FORMULARIO DE CONTACTO
+   ========================================== */
+
+.form-contacto {
+  max-width: 600px;
+  margin: 30px auto;
+  background: #ffffff;
+  padding: 35px 40px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(14, 81, 89, 0.12);
+  text-align: left;
+  border: 1px solid rgba(37, 166, 178, 0.15);
+}
+
+.form-contacto .campo {
+  margin-bottom: 20px;
+}
+
+.form-contacto label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #0E5159;
+  font-size: 0.95rem;
+}
+
+.form-contacto input,
+.form-contacto textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #e0e7e6;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fafcfc;
+  color: #2D3748;
+}
+
+.form-contacto input:focus,
+.form-contacto textarea:focus {
+  outline: none;
+  border-color: #25A6B2;
+  box-shadow: 0 0 0 4px rgba(37, 166, 178, 0.12);
+  background-color: #ffffff;
+}
+
+.form-contacto input::placeholder,
+.form-contacto textarea::placeholder {
+  color: #a0b3b3;
+  font-weight: 300;
+}
+
+.form-contacto .btn-enviar {
+  background: linear-gradient(135deg, #0E5159 0%, #1A7A82 100%);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-top: 5px;
+}
+
+.form-contacto .btn-enviar:hover {
+  background: linear-gradient(135deg, #1A7A82 0%, #25A6B2 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 166, 178, 0.35);
+}
+
+.form-contacto .btn-enviar:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 10px rgba(37, 166, 178, 0.2);
+}
+
+#mensajeExito {
+  background: #d4edda;
+  color: #155724;
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  border-left: 5px solid #28a745;
+  font-weight: 500;
+  display: none;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive del formulario */
+@media (max-width: 768px) {
+  .form-contacto {
+    padding: 25px 20px;
+    margin: 20px 10px;
+  }
+
+  .form-contacto input,
+  .form-contacto textarea {
+    font-size: 0.95rem;
+    padding: 10px 12px;
+  }
+
+  .form-contacto .btn-enviar {
+    font-size: 1rem;
+    padding: 13px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-contacto {
+    padding: 20px 15px;
+    border-radius: 12px;
+  }
+
+  .form-contacto .campo {
+    margin-bottom: 15px;
+  }
+
+  .form-contacto label {
+    font-size: 0.9rem;
+  }
+}

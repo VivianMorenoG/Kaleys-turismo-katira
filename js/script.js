@@ -1,46 +1,107 @@
+// ==========================================
+// VALIDACIÓN Y ENVÍO DEL FORMULARIO DE CONTACTO
+// ==========================================
 
-if (typeof document !== "undefined") {
-  //TODO código del navegador
+(function() {
+  // Esperar a que el DOM esté completamente cargado
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initFormulario);
+  } else {
+    initFormulario();
+  }
 
-  document.querySelectorAll("nav a").forEach((link) => {
-    link.addEventListener("click", function (e) {
+  function initFormulario() {
+    const form = document.getElementById('formContacto');
+    if (!form) return; // Si no existe el formulario, no hacer nada
+
+    form.addEventListener('submit', function(e) {
       e.preventDefault();
 
-      const destino = document.querySelector(this.getAttribute("href"));
+      // Obtener campos
+      const nombre = document.getElementById('nombre');
+      const email = document.getElementById('email');
+      const telefono = document.getElementById('telefono');
+      const mensaje = document.getElementById('mensaje');
+      const mensajeExito = document.getElementById('mensajeExito');
 
-      if (destino) {
-        destino.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
+      // Limpiar errores previos
+      limpiarErrores();
+
+      // Validar campo por campo
+      let errores = [];
+
+      // Validar nombre
+      if (!nombre.value.trim() || nombre.value.trim().length < 2) {
+        errores.push('El nombre debe tener al menos 2 caracteres.');
+        marcarError(nombre);
       }
+
+      // Validar email
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!email.value.trim() || !emailRegex.test(email.value.trim())) {
+        errores.push('Ingresa un correo electrónico válido (ej: usuario@dominio.com).');
+        marcarError(email);
+      }
+
+      // Validar mensaje
+      if (!mensaje.value.trim() || mensaje.value.trim().length < 10) {
+        errores.push('El mensaje debe tener al menos 10 caracteres.');
+        marcarError(mensaje);
+      }
+
+      // Si hay errores, mostrar alerta y detener
+      if (errores.length > 0) {
+        alert('⚠️ Por favor, corrige los siguientes errores:\n\n• ' + errores.join('\n• '));
+        return;
+      }
+
+      // --- SIMULACIÓN DE ENVÍO EXITOSO ---
+      // En un entorno real, aquí iría un fetch() o XMLHttpRequest
+
+      // Mostrar mensaje de éxito
+      if (mensajeExito) {
+        mensajeExito.style.display = 'block';
+        mensajeExito.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+
+      // Limpiar formulario
+      form.reset();
+
+      // Ocultar mensaje después de 6 segundos
+      setTimeout(() => {
+        if (mensajeExito) {
+          mensajeExito.style.display = 'none';
+        }
+      }, 6000);
+
+      console.log('✅ Formulario enviado (simulación)');
+      console.log('Datos:', {
+        nombre: nombre.value.trim(),
+        email: email.value.trim(),
+        telefono: telefono.value.trim(),
+        mensaje: mensaje.value.trim()
+      });
     });
-  });
-  //BOTON ARRIBA
-  const btnTop = document.createElement("button");
-  btnTop.id = "btnTop";
-  btnTop.innerHTML = "↑";
-  btnTop.title = "Volver al inicio";
 
-  document.body.appendChild(btnTop);
+    // Funciones auxiliares
+    function marcarError(campo) {
+      campo.style.borderColor = '#dc3545';
+      campo.style.backgroundColor = '#fff5f5';
+    }
 
-  window.addEventListener("scroll", () => {
-    btnTop.style.display = window.scrollY > 300 ? "block" : "none";
-  });
+    function limpiarErrores() {
+      document.querySelectorAll('.form-contacto input, .form-contacto textarea').forEach(function(campo) {
+        campo.style.borderColor = '';
+        campo.style.backgroundColor = '';
+      });
+    }
 
-  btnTop.addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
+    // Limpiar errores al escribir en los campos
+    document.querySelectorAll('.form-contacto input, .form-contacto textarea').forEach(function(campo) {
+      campo.addEventListener('input', function() {
+        this.style.borderColor = '';
+        this.style.backgroundColor = '';
+      });
     });
-  });
-
-  const year = new Date().getFullYear();
-  const footer = document.querySelector("footer");
-
-  if (footer) {
-    footer.innerHTML += `
-            <p>© ${year} Kaley's Turismo en Katira</p>
-        `;
   }
-}
+})();
