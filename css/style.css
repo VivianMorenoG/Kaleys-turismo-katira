@@ -1,381 +1,524 @@
-/* Reset básico */
+/* ==========================================
+RESET Y VARIABLES
+========================================== */
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.7;
-    color: #2D3748;
-    background-color: #F8FBFC;
-}
+:root {
+--color-principal: #0E5159;
+--color-secundario: #25A6B2;
+--color-acento: #F2C94C;
+--color-verde: #3A887C;
+--color-texto: #2D3748;
+--color-texto-suave: #4A4A4A;
+--color-fondo: #F8FBFC;
+--color-blanco: #FFFFFF;
 
-/* --------------------------
-   ENCABEZADO
---------------------------- */
-header {
-    background-color: #0E5159;
-    color: white;
-    padding: 15px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-}
+/* Escala tipográfica */
+--texto-base: 1rem;
+--texto-grande: 1.125rem;
+--titulo-h4: 1.25rem;
+--titulo-h3: 1.5rem;
+--titulo-h2: 2rem;
+--titulo-h1: clamp(2.2rem, 5vw, 3rem);
 
-header img {
-    width: 80px;
-    height: auto;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 25px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease;
-}
-
-nav a:hover {
-    color: #F2C94C;
-}
-
-/* --------------------------
-   SECCIÓN PRINCIPAL / HERO
---------------------------- */
-#inicio {
-    text-align: center;
-    padding: 90px 20px;
-    background: linear-gradient(rgba(14, 81, 89, 0.65), rgba(14, 81, 89, 0.65)),
-                url("/imagenes/panorama_rio_celeste.webp");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: white;
-}
-
-#inicio h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-}
-
-#inicio p {
-    max-width: 850px;
-    margin: 0 auto;
-    font-size: 1.1rem;
-}
-
-/* --------------------------
-   SECCIONES GENERALES
---------------------------- */
-section {
-    padding: 60px 8%;
-    max-width: 1250px;
-    margin: 0 auto;
-}
-
-section h2 {
-    color: #3A887C;
-    margin-bottom: 25px;
-    border-left: 5px solid #25A6B2;
-    padding-left: 12px;
-    font-size: 1.8rem;
-}
-
-article {
-    background-color: white;
-    margin-top: 25px;
-    padding: 25px;
-    border-radius: 14px;
-    box-shadow: 0 3px 12px rgba(14, 81, 89, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-article:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 6px 16px rgba(14, 81, 89, 0.15);
-}
-
-article h3 {
-    color: #0E5159;
-    margin-bottom: 12px;
-    font-size: 1.3rem;
-}
-
-/* --------------------------
-   CONTACTO
---------------------------- */
-#contacto {
-    background: #ffffff;
-    border-radius: 20px;
-    margin-top: 50px;
-    text-align: center;
-    box-shadow: 0 3px 12px rgba(0,0,0,.08);
-}
-
-#contacto h2 {
-    border: none;
-    color: #0E5159;
-    margin-bottom: 20px;
-}
-
-.contacto-info {
-    margin-top: 20px;
-}
-
-.contacto-info p {
-    margin: 12px 0;
-    font-size: 1.05rem;
-}
-
-/* --------------------------
-   PIE DE PÁGINA
---------------------------- */
-footer {
-    background-color: #0E5159;
-    color: white;
-    text-align: center;
-    padding: 35px 20px;
-    margin-top: 20px;
-}
-
-/* --------------------------
-   BOTÓN VOLVER ARRIBA
---------------------------- */
-#btnTop {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    border: none;
-    background-color: #25A6B2;
-    color: white;
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: none;
-    font-size: 22px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease;
-}
-
-#btnTop:hover {
-    background-color: #56C7D0;
-}
-
-/* --------------------------
-   DISEÑO RESPONSIVO
---------------------------- */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        gap: 15px;
-        padding: 15px 20px;
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
-    }
-
-    #inicio h1 {
-        font-size: 2.1rem;
-    }
-
-    section {
-        padding: 40px 5%;
-    }
-}
-/* --------------------------
-   HOSPEDAJE - ESTILO CARDS
---------------------------- */
-
-#hospedaje {
-    background-color: #eef6f5;
-    border-radius: 20px;
-}
-
-/* contenedor de cards */
-#hospedaje .grid-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-}
-
-/* sobrescribe article SOLO en hospedaje */
-#hospedaje article {
-    margin-top: 0; /* anula tu margin global */
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-}
-
-/* imagen estilo card */
-#hospedaje article img {
-    width: 100%;
-    height: 190px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-/* títulos mejor jerarquía */
-#hospedaje article h3,
-#hospedaje article h4 {
-    margin-top: 12px;
-}
-
-/* texto más limpio */
-#hospedaje article p {
-    margin-top: 8px;
-    color: #4a4a4a;
+/* Sombras consistentes */
+--sombra-suave: 0 3px 12px rgba(14, 81, 89, 0.10);
+--sombra-media: 0 6px 16px rgba(14, 81, 89, 0.15);
 }
 
 /* ==========================================
-   FORMULARIO DE CONTACTO
-   ========================================== */
+CUERPO GENERAL
+========================================== */
+
+body {
+font-family: Arial, Helvetica, sans-serif;
+line-height: 1.7;
+color: var(--color-texto);
+background-color: var(--color-fondo);
+font-size: var(--texto-base);
+}
+
+/* ==========================================
+ENCABEZADO
+========================================== */
+
+header {
+background-color: var(--color-principal);
+color: var(--color-blanco);
+padding: 15px 40px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+position: sticky;
+top: 0;
+z-index: 1000;
+box-shadow: var(--sombra-suave);
+}
+
+header img {
+width: 80px;
+height: auto;
+}
+
+nav ul {
+display: flex;
+list-style: none;
+gap: 15px;
+}
+
+nav a {
+display: inline-block;
+color: var(--color-blanco);
+text-decoration: none;
+font-weight: 600;
+padding: 10px 12px;
+min-height: 44px;
+border-radius: 6px;
+transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+nav a:hover {
+color: var(--color-acento);
+}
+
+/* ==========================================
+ACCESIBILIDAD - FOCUS
+========================================== */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+outline: 3px solid var(--color-acento);
+outline-offset: 3px;
+}
+
+nav a:focus-visible {
+color: var(--color-acento);
+background-color: rgba(255, 255, 255, 0.10);
+}
+
+/* ==========================================
+SECCIÓN PRINCIPAL / HERO
+========================================== */
+
+#inicio {
+text-align: center;
+padding: 90px 20px;
+background:
+linear-gradient(
+rgba(14, 81, 89, 0.65),
+rgba(14, 81, 89, 0.65)
+),
+url("/imagenes/panorama_rio_celeste.webp");
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+color: var(--color-blanco);
+}
+
+#inicio h1 {
+font-size: var(--titulo-h1);
+line-height: 1.2;
+margin-bottom: 20px;
+}
+
+#inicio p {
+max-width: 850px;
+margin: 0 auto;
+font-size: var(--texto-grande);
+}
+
+/* ==========================================
+JERARQUÍA TIPOGRÁFICA
+========================================== */
+
+h2 {
+font-size: var(--titulo-h2);
+line-height: 1.3;
+}
+
+h3 {
+font-size: var(--titulo-h3);
+line-height: 1.4;
+}
+
+h4 {
+font-size: var(--titulo-h4);
+line-height: 1.4;
+}
+
+/* ==========================================
+SECCIONES GENERALES
+========================================== */
+
+section {
+padding: 60px 8%;
+max-width: 1250px;
+margin: 0 auto;
+}
+
+section h2 {
+color: var(--color-verde);
+margin-bottom: 25px;
+border-left: 5px solid var(--color-secundario);
+padding-left: 12px;
+}
+
+/* ==========================================
+TARJETAS / ARTÍCULOS
+========================================== */
+
+article {
+background-color: var(--color-blanco);
+margin-top: 25px;
+padding: 25px;
+border-radius: 14px;
+box-shadow: var(--sombra-suave);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+article:hover {
+transform: translateY(-4px);
+box-shadow: var(--sombra-media);
+}
+
+article h3 {
+color: var(--color-principal);
+margin-bottom: 12px;
+}
+
+/* ==========================================
+CONTACTO
+========================================== */
+
+#contacto {
+background: var(--color-blanco);
+border-radius: 20px;
+margin-top: 50px;
+text-align: center;
+box-shadow: var(--sombra-suave);
+}
+
+#contacto h2 {
+border: none;
+color: var(--color-principal);
+margin-bottom: 20px;
+}
+
+.contacto-info {
+margin-top: 20px;
+}
+
+.contacto-info p {
+margin: 12px 0;
+font-size: var(--texto-grande);
+}
+
+/* ==========================================
+PIE DE PÁGINA
+========================================== */
+
+footer {
+background-color: var(--color-principal);
+color: var(--color-blanco);
+text-align: center;
+padding: 35px 20px;
+margin-top: 20px;
+}
+
+footer a {
+display: inline-block;
+color: var(--color-blanco);
+padding: 10px 12px;
+min-height: 44px;
+text-decoration: none;
+}
+
+footer a:hover {
+color: var(--color-acento);
+}
+
+/* ==========================================
+BOTÓN VOLVER ARRIBA
+========================================== */
+
+#btnTop {
+position: fixed;
+bottom: 25px;
+right: 25px;
+border: none;
+background-color: var(--color-secundario);
+color: var(--color-blanco);
+width: 52px;
+height: 52px;
+border-radius: 50%;
+cursor: pointer;
+display: none;
+font-size: 22px;
+box-shadow: var(--sombra-suave);
+transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#btnTop:hover {
+background-color: #56C7D0;
+transform: translateY(-2px);
+}
+
+/* ==========================================
+HOSPEDAJE - CARDS
+========================================== */
+
+#hospedaje {
+background-color: #EEF6F5;
+border-radius: 20px;
+}
+
+#hospedaje .grid-cards {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 25px;
+}
+
+#hospedaje article {
+margin-top: 0;
+display: flex;
+flex-direction: column;
+overflow: hidden;
+}
+
+#hospedaje article img {
+width: 100%;
+height: 190px;
+object-fit: cover;
+border-radius: 10px;
+}
+
+#hospedaje article h3,
+#hospedaje article h4 {
+margin-top: 12px;
+}
+
+#hospedaje article p {
+margin-top: 8px;
+color: var(--color-texto-suave);
+}
+
+/* ==========================================
+FORMULARIO DE CONTACTO
+========================================== */
 
 .form-contacto {
-  max-width: 600px;
-  margin: 30px auto;
-  background: #ffffff;
-  padding: 35px 40px;
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(14, 81, 89, 0.12);
-  text-align: left;
-  border: 1px solid rgba(37, 166, 178, 0.15);
+max-width: 600px;
+margin: 30px auto;
+background: var(--color-blanco);
+padding: 35px 40px;
+border-radius: 16px;
+box-shadow: var(--sombra-suave);
+text-align: left;
+border: 1px solid rgba(37, 166, 178, 0.15);
 }
 
 .form-contacto .campo {
-  margin-bottom: 20px;
+margin-bottom: 20px;
 }
 
 .form-contacto label {
-  display: block;
-  font-weight: 600;
-  margin-bottom: 6px;
-  color: #0E5159;
-  font-size: 0.95rem;
+display: block;
+font-weight: 600;
+margin-bottom: 6px;
+color: var(--color-principal);
+font-size: 0.95rem;
 }
 
 .form-contacto input,
 .form-contacto textarea {
-  width: 100%;
-  padding: 12px 15px;
-  border: 2px solid #e0e7e6;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-family: inherit;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  background-color: #fafcfc;
-  color: #2D3748;
+width: 100%;
+padding: 12px 15px;
+min-height: 44px;
+border: 2px solid #E0E7E6;
+border-radius: 8px;
+font-size: var(--texto-base);
+font-family: inherit;
+transition: border-color 0.3s ease, box-shadow 0.3s ease;
+background-color: #FAFCFC;
+color: var(--color-texto);
 }
 
 .form-contacto input:focus,
 .form-contacto textarea:focus {
-  outline: none;
-  border-color: #25A6B2;
-  box-shadow: 0 0 0 4px rgba(37, 166, 178, 0.12);
-  background-color: #ffffff;
+outline: none;
+border-color: var(--color-secundario);
+box-shadow: 0 0 0 4px rgba(37, 166, 178, 0.12);
+background-color: var(--color-blanco);
 }
 
 .form-contacto input::placeholder,
 .form-contacto textarea::placeholder {
-  color: #a0b3b3;
-  font-weight: 300;
+color: #A0B3B3;
+font-weight: 300;
 }
 
 .form-contacto .btn-enviar {
-  background: linear-gradient(135deg, #0E5159 0%, #1A7A82 100%);
-  color: white;
-  border: none;
-  padding: 15px 30px;
-  font-size: 1.1rem;
-  font-weight: 700;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  width: 100%;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  margin-top: 5px;
+background: linear-gradient(
+135deg,
+var(--color-principal) 0%,
+#1A7A82 100%
+);
+color: var(--color-blanco);
+border: none;
+padding: 15px 30px;
+min-height: 48px;
+font-size: var(--texto-grande);
+font-weight: 700;
+border-radius: 30px;
+cursor: pointer;
+transition: background 0.3s ease, transform 0.3s ease;
+width: 100%;
+letter-spacing: 0.5px;
+text-transform: uppercase;
+margin-top: 5px;
 }
 
 .form-contacto .btn-enviar:hover {
-  background: linear-gradient(135deg, #1A7A82 0%, #25A6B2 100%);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(37, 166, 178, 0.35);
+background: linear-gradient(
+135deg,
+#1A7A82 0%,
+var(--color-secundario) 100%
+);
+transform: translateY(-2px);
 }
 
 .form-contacto .btn-enviar:active {
-  transform: translateY(0);
-  box-shadow: 0 3px 10px rgba(37, 166, 178, 0.2);
+transform: translateY(0);
 }
+
+.form-contacto .btn-enviar:focus-visible {
+outline: 3px solid var(--color-acento);
+outline-offset: 3px;
+}
+
+/* ==========================================
+MENSAJE DE ÉXITO
+========================================== */
 
 #mensajeExito {
-  background: #d4edda;
-  color: #155724;
-  padding: 15px 20px;
-  border-radius: 10px;
-  margin-top: 20px;
-  border-left: 5px solid #28a745;
-  font-weight: 500;
-  display: none;
-  animation: fadeIn 0.5s ease;
+background: #D4EDDA;
+color: #155724;
+padding: 15px 20px;
+border-radius: 10px;
+margin-top: 20px;
+border-left: 5px solid #28A745;
+font-weight: 500;
+display: none;
+animation: fadeIn 0.5s ease;
 }
+
+/* ==========================================
+ANIMACIÓN
+========================================== */
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+from {
+opacity: 0;
+transform: translateY(-10px);
 }
 
-/* Responsive del formulario */
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+/* ==========================================
+RESPONSIVE
+========================================== */
+
 @media (max-width: 768px) {
-  .form-contacto {
-    padding: 25px 20px;
-    margin: 20px 10px;
-  }
 
-  .form-contacto input,
-  .form-contacto textarea {
-    font-size: 0.95rem;
-    padding: 10px 12px;
-  }
-
-  .form-contacto .btn-enviar {
-    font-size: 1rem;
-    padding: 13px 20px;
-  }
+header {
+flex-direction: column;
+gap: 10px;
+padding: 15px 20px;
 }
+
+nav ul {
+flex-direction: column;
+gap: 5px;
+text-align: center;
+}
+
+nav a {
+padding: 10px 16px;
+min-height: 44px;
+}
+
+#inicio {
+padding: 70px 20px;
+}
+
+#inicio h1 {
+font-size: 2.2rem;
+}
+
+section {
+padding: 40px 5%;
+}
+
+.form-contacto {
+padding: 25px 20px;
+margin: 20px 10px;
+}
+
+.form-contacto input,
+.form-contacto textarea {
+font-size: var(--texto-base);
+padding: 12px;
+}
+
+.form-contacto .btn-enviar {
+font-size: var(--texto-base);
+padding: 13px 20px;
+min-height: 48px;
+}
+}
+
+/* ==========================================
+PANTALLAS PEQUEÑAS
+========================================== */
 
 @media (max-width: 480px) {
-  .form-contacto {
-    padding: 20px 15px;
-    border-radius: 12px;
-  }
 
-  .form-contacto .campo {
-    margin-bottom: 15px;
-  }
+#inicio h1 {
+font-size: 2rem;
+}
 
-  .form-contacto label {
-    font-size: 0.9rem;
-  }
+section h2 {
+font-size: 1.75rem;
+}
+
+.form-contacto {
+padding: 20px 15px;
+border-radius: 12px;
+}
+
+.form-contacto .campo {
+margin-bottom: 15px;
+}
+
+.form-contacto label {
+font-size: 0.9rem;
+}
+
+#btnTop {
+width: 48px;
+height: 48px;
+right: 18px;
+bottom: 18px;
+}
 }
