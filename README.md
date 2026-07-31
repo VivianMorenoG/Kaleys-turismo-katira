@@ -29,7 +29,7 @@ El sitio cuenta con diferentes secciones que permiten al usuario explorar el des
 - Optimización SEO.
 - Integración con Google Analytics.
 - Botón "Volver arriba".
--Footer dinámico con año automático.
+- Footer dinámico con año automático.
 
 ## Tecnología
 
@@ -39,9 +39,31 @@ El sitio cuenta con diferentes secciones que permiten al usuario explorar el des
 - Visual Studio Code
 - Git
 - GitHub
+- GitHub Actions
 - InfinityFree
 - Google Search Console
 - Google Analytics
+
+## SEO
+
+El proyecto incorpora diferentes elementos de optimización para motores de búsqueda:
+
+- Etiqueta <title>.
+- Meta descripción.
+- Meta robots.
+- URL canónica.
+- Open Graph.
+- Twitter Cards.
+- Datos estructurados JSON-LD.
+- robots.txt.
+- sitemap.xml.
+- Textos alternativos (alt) en las imágenes.
+- Estructura semántica mediante etiquetas HTML5.
+- URL pública mediante HTTPS.
+
+La URL canónica del proyecto es:
+
+https://kaleys-turismo-katira.infinityfreeapp.com/
 
 ## Installation
 
@@ -72,9 +94,10 @@ Una vez abierto el sitio web, el usuario podrá:
 ```text
 PRUEBASK6/
 ├── css/
-│   └── index_practica2.css
+│   └── style.css
 ├── js/
-│   └── index_practica2.js
+│   └── script.js
+│   └── server.js
 ├── node.modules/
 │   └── dotenv/
 │   └── .package-lock.json
@@ -83,10 +106,10 @@ PRUEBASK6/
 ├──index.html
 ├──package-lock.json
 ├──paquete.json
-├──robots.tx
+├──robots.txt
 ├──README.md
 ├── sitemap.xml
-├── Imagenes/
+├── imagenes/
 │   └── logo.webp
 │   └── panorama_rio_celeste.webp
 │   └── volcan_Tenorio_en_Costa_Rica.webp 
